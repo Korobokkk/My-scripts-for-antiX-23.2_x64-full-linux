@@ -1,2 +1,5 @@
 # My-scripts-for-antiX-23.2_x64-full-linux
 Репа со скриптами на случай BackUp для antiX-23.2_x64-full. Может кому пригодится
+
+## Список Скриптов:
+`monitomonitor_multy.sh` - подключение второго моника. 3 режима - можно накинуть на 1 HotKeys.
