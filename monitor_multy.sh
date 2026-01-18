@@ -41,6 +41,7 @@ case "$STATE" in
                --output "$LAPTOP" --off
         echo 1 > "$STATE_FILE"
         xwallpaper --output "$HDMI" --stretch "$WALLPAPERHDMI"
+        conky -d -b
         ;;
     1)
         # оба, HDMI слева
@@ -48,6 +49,7 @@ case "$STATE" in
                --output "$LAPTOP" --auto 
         echo 2 > "$STATE_FILE"
         set_wallpaper_2_display
+        conky -d -b
         ;;
     2)
         # оба, HDMI справа
@@ -55,5 +57,6 @@ case "$STATE" in
                --output "$LAPTOP" --auto 
         echo 0 > "$STATE_FILE"
         set_wallpaper_2_display
+        conky -d -b
         ;;
 esac
