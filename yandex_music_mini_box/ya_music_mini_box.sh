@@ -1,10 +1,16 @@
 #!/bin/sh
 #
 
+RED="\033[31m"
+GREEN="\033[32m"
+YELLOW="\033[33m"
+BLUE="\033[34m"
+RESET="\033[0m"
+
 ./ya_music_deps_check.sh || exit 1
 
 if [ -z "$DISPLAY" ]; then
-    echo "Error 1: no session detected(X11)"
+    echo "${RED}Error 1: no session detected(X11)${RESET}"
     exit 1
 fi
 
@@ -18,10 +24,10 @@ find_music_window() {
 
 WIN_ID=$(find_music_window)
 if [ -z "$WIN_ID" ]; then
-    echo "Error 3: Ya_music not open"
+    echo "${RED}Error 2: Ya_music not open${RESET}}"
     exit 0
 fi
 wmctrl -i -r "$WIN_ID" -e "0,0,0,500,350"
 wmctrl -i -R "$WIN_ID"
 
-echo " Very good"
+echo "${GREEN}Very good${RESET}"

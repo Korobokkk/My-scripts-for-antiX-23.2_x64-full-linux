@@ -16,8 +16,10 @@ else
 fi
 
 echo "${BLUE}INSTALL||UPDATE wmctrl, xdotool, libnotify-bin${RESET}"
-$SUDO apt install wmctrl xdotool libnotify-bin
+$SUDO apt install wmctrl xdotool libnotify-bin #test_sdeps FOR CHECKS
 
-echo "${GREEN}Very good.${RESET}"
+echo "${GREEN}The installation is complete. If there are any issues with the deps, you will see them in the deps_check script${RESET}"
 echo "${YELLOW}Link to the official Yandex Music client: https://music.yandex.ru/download/${RESET}"
-echo "${YELLOW}Download this client or any other client that has 'музыка'|| 'music' in its name${RESET} and Run /.ya_music_deps_check.sh"
+echo "${YELLOW}Download this client or any other client that has 'музыка'|| 'music' in its name and Run:${RESET} ${GREEN}/.ya_music_mini_box.sh${RESET}"
+
+exit 0
