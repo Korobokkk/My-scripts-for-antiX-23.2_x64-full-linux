@@ -1,5 +1,12 @@
 #!/bin/sh
-#
+HOTKEY_MODE=0 # for --hotkey mode
+for arg in "$@"; do
+    case "$arg" in 
+        --hotkey)
+        HOTKEY_MODE=1
+        ;;
+    esac
+done
 
 RED="\033[31m"
 GREEN="\033[32m"
@@ -7,7 +14,9 @@ YELLOW="\033[33m"
 BLUE="\033[34m"
 RESET="\033[0m"
 
-./ya_music_deps_check.sh || exit 1
+#fix problem with icewm/keys
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+"$SCRIPT_DIR/ya_music_deps_check.sh" "$HOTKEY_MODE" || exit 1
 
 if [ -z "$DISPLAY" ]; then
     echo "${RED}Error 1: no session detected(X11)${RESET}"

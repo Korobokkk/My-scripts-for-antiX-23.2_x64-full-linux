@@ -1,5 +1,6 @@
 #!/bin/sh
 #script for "Yandex Music". checks:
+[ "$1" = "1" ] && exit 0
 
 RED="\033[31m"
 GREEN="\033[32m"
